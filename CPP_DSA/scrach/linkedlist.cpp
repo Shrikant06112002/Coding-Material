@@ -110,10 +110,6 @@ int main(){
      printN(head);
      head = reverse(head);
      printN(head);
-
-
-
-
     
     return 0;
 }
