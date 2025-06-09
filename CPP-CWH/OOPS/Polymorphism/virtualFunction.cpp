@@ -4,25 +4,35 @@ using namespace std;
 class BaseClass{
     public:
         int var_base=1;
-        virtual void display(){
-            cout<<"1 Dispalying Base class variable var_base "<<var_base<<endl;
+        void display(){
+            // cout<<"1 Dispalying Base class variable var_base "<<var_base<<endl;
+        }
+        virtual ~BaseClass(){
+            cout<<"base class\n";
         }
 };
 
 class DerivedClass : public BaseClass{
     public:
-            int var_derived=2;
-            void display(){
-                cout<<"2 Dispalying Base class variable var_base "<<var_base<<endl;
-                cout<<"2 Dispalying Derived class variable var_derived "<<var_derived<<endl;
-            }
+        int var_derived=2;
+        void display(){
+            cout<<"2 Dispalying Base class variable var_base "<<var_base<<endl;
+            cout<<"2 Dispalying Derived class variable var_derived "<<var_derived<<endl;
+        }
+        ~DerivedClass(){
+            cout<<"DerivedClass class\n";
+        }
 };
 int main(){
-    BaseClass * base_class_pointer;
-    BaseClass obj_base;
-    DerivedClass obj_derived;
+    // BaseClass * base_class_pointer;
+    // BaseClass obj_base;
+    // DerivedClass obj_derived;
 
-    base_class_pointer = &obj_derived;
-    base_class_pointer->display();
+    // base_class_pointer = &obj_derived;
+    // base_class_pointer->display();
+    BaseClass *ptr = new DerivedClass();
+    delete ptr;
+    // ptr->display();
+
     return 0;
 }
